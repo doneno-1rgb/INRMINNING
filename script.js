@@ -1,0 +1,4 @@
+function toggleMenu(){const nav=document.getElementById('navlinks');if(nav)nav.classList.toggle('open');}
+document.querySelectorAll('#year').forEach(el=>el.textContent=new Date().getFullYear());
+const form=document.getElementById('contactForm');
+if(form){form.addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim();const email=document.getElementById('email').value.trim();const message=document.getElementById('message').value.trim();const subject=encodeURIComponent('Website inquiry from '+name);const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nMessage:\n'+message);document.getElementById('formNote').textContent='आपके email app में message तैयार होगा। hello@example.com को अपने वास्तविक email से बदलना न भूलें।';window.location.href='mailto:hello@example.com?subject='+subject+'&body='+body;});}
